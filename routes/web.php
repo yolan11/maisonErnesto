@@ -15,4 +15,20 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('Accueil');
+
+Route::get('/brands', function(){
+    return view('Brands');
+})->name('Brands');
+
+Route::get('/showroom', function(){
+    return view('Showroom');
+})->name('Showroom');
+
+Route::get('/dashboard', function () {
+    return view('adminView.dashboard');
+})->name('dashboard')->middleware('auth');
+
+
+
+require __DIR__.'/auth.php';
