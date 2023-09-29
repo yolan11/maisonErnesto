@@ -20,24 +20,37 @@
                 <button type="submit" class="rounded bg-white px-2 py-1">Déconnexion</button>
             </form>
         </header>
-        <display class="bg-yellow-200 w-full h-full flex ">
-            <div class="w-1/2 h-full p-4">
-                <div class="w-full h-full bg-white rounded-xl">
-                    <h1>Liste des Utilisateurs</h1>
-
-                    <ul>
+        <display class="w-full h-full ">
+            <div class="w-full h-full p-4">
+                <div class="w-full h-full bg-gray-400 rounded-xl">
+                    <div class="w-full flex justify-center">
+                        <h1 class="">Liste des utilisateurs admin</h1>
+                    </div>
+                    <table class="w-full flex flex-col">
+                        <thead class="w-full">
+                            <tr class="w-full flex">
+                                <td class="w-1/3">Nom utilisateur</td>
+                                <td class="w-1/3">Email</td>
+                                <td class="w-1/3">Mot de passe crypté</td>
+                            </tr>
+                        </thead>
+                        <tbody class="w-full">
                         @foreach ($users as $user)
-                            <li>{{ $user->name }}</li>
+                            <tr class="w-full flex">
+                                <td class="w-1/3 truncate">{{ $user->name }}</td>
+                                <td class="w-1/3 truncate">{{ $user->email }}</td>
+                                <td class="w-1/3 truncate">{{ $user->password }}</td>
+                            </tr>
                         @endforeach
-                    </ul>
+                        </tbody>
+                    </table>
                 </div>
             </div>
-            <div class="w-1/2 h-full p-4">
-                <div class="w-full h-full bg-white rounded-xl"></div>
+            <div class="w-full h-full p-4">
+                <div class="w-full h-full bg-gray-400 rounded-xl"></div>
             </div>
         </display>
     </div>
-
 </div>
 </body>
 </html>

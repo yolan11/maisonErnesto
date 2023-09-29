@@ -9,9 +9,9 @@ Route::middleware('guest')->group(function () {
 
     Route::get('/register', [RegisterController::class, 'create'])->name('Register.create');
 
-    Route::get('/login', [LoginController::class, 'create'])->name('Login.create')->middleware('guest');
+    Route::get('/login', [LoginController::class, 'create'])->name('Login.create');
 
-    Route::post('/login/store', [LoginController::class, 'store'])->name('Login.store');
+    Route::post('/login/store', [LoginController::class, 'store'])->name('Login.store')->middleware('throttle:5,1');
 });
 
 Route::middleware('auth')->group(function () {

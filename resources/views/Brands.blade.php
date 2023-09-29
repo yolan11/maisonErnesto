@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale1=0">
     @vite('resources/css/app.css')
-    <title>Maison Ernesto - Marques</title>
+    <title>Marques - Maison Ernesto</title>
     <link rel="icon" type="image/x-icon" href="/public/images/logoSiteWeb/logo2.png">
 
 </head>
@@ -12,7 +12,7 @@
 @include('layouts/Header')
 
 
-<div class="mt-20">
+<div class="mt-20 min-h-screen">
     <div class="w-full h-20 flex items-center justify-center p-5">
         <input id="searchbar" onkeyup="search()" class=" center-text w-1/2 rounded-md h-full p-4" type="search" placeholder="Rechercher une marque" name="search">
     </div>
@@ -127,6 +127,9 @@
     </div>
 
 </div>
+
+@include('layouts/Footer')
+
 <script>
     function search() {
         const searchInput = document.getElementById('searchbar').value.toLowerCase();

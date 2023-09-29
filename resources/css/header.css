@@ -3,5 +3,5 @@
 @tailwind utilities;
 
 header div nav a.active {
-    color: red;
+    color: #6e4836;
 }
