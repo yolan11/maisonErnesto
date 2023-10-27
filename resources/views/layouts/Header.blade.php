@@ -5,17 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale1=0">
     @vite('resources/css/header.css')
 </head>
-<body class="bg-gray-100">
-<header class="fixed top-0 left-0 w-full py-6 px-6 z-50 header bg-white">
+<body class="">
+<header class="fixed h-48 top-0 left-0 w-full px-6 z-50 header bg-pink-200 flex items-center justify-center ">
     <div class="flex items-center justify-center">
         <nav class="hidden md:flex space-x-20">
             <a href="{{ route('Accueil') }}" class="flex w-48 items-center justify-center">
-                <img src="{{ URL('images/logoSiteWeb/logo2.png') }}" alt="Logo2" class="logo2 h-8 w-auto justify-enter items-center">
-                <img src="{{ URL('images/logoSiteWeb/logo1.png') }}" alt="Logo1" class="logo1 h-8 w-auto justify-enter items-center">
+                <img src="{{ URL('images/logoSiteWeb/logo2.png') }}" alt="Logo2" class="logo2 h-12 w-auto justify-enter items-center">
+                <img src="{{ URL('images/logoSiteWeb/logo1.png') }}" alt="Logo1" class="logo1 h-12 w-auto justify-enter items-center">
             </a>
-            <a href="{{ route('Accueil') }}" class="text-black hover:underline  {{ Request::is('/') ? 'active' : '' }}">Accueil</a>
-            <a href="{{ route('Brands') }}" class="text-black hover:underline {{ Request::is('brands') ? 'active' : '' }}">Marques</a>
-            <a href="{{ route('Showroom') }}" class="text-black hover:underline {{ Request::is('showroom') ? 'active' : '' }}">Showroom</a>
+            <a href="{{ route('Accueil') }}" class="text-black text-2xl font-medium hover:underline  {{ Request::is('/') ? 'active' : '' }}">Accueil</a>
+            <a href="{{ route('Brands') }}" class="text-black text-2xl font-medium hover:underline {{ Request::is('brands') ? 'active' : '' }}">Marques</a>
+            <a href="{{ route('Showroom') }}" class="text-black text-2xl font-medium hover:underline {{ Request::is('showroom') ? 'active' : '' }}">Showroom</a>
         </nav>
     </div>
 </header>
@@ -49,6 +49,17 @@
 
     // Utiliser setInterval pour changer de logo toutes les 3 secondes
     setInterval(changeLogo, 4000);
+
+    window.addEventListener("scroll", function() {
+        const header = document.querySelector(".header");
+        if (window.scrollY > 80) {
+            header.classList.remove("h-48");
+            header.classList.add("h-20");
+        } else {
+            header.classList.remove("h-20");
+            header.classList.add("h-48");
+        }
+    });
 
 
 </script>

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\BrandsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,9 +19,8 @@ Route::get('/', function () {
     return view('welcome');
 })->name('Accueil');
 
-Route::get('/brands', function(){
-    return view('Brands');
-})->name('Brands');
+Route::get('/brands', [BrandsController::class, 'index'])->name('Brands');
+
 
 Route::get('/showroom', function(){
     return view('Showroom');
@@ -28,6 +28,7 @@ Route::get('/showroom', function(){
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard')->middleware('auth');
 
+Route::post('/brands/store', [BrandsController::class, 'store'])->name('Brands.store');
 
 
 require __DIR__.'/auth.php';

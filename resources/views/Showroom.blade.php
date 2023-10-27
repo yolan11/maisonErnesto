@@ -18,9 +18,10 @@
     <div class="w-full h-full flex flex-col ">
         <div class="w-full h-full flex flex-col justify-center">
             <div class="w-full h-screen flex flex-col">
-                <div class="pt-20 w-full flex h-[800px] xl:px-[150px] 2xl:px-[200px] overflow-hidden">
-                    <img src="{{ URL('images/showroom/magasinMaisonErnestoDevanture.png') }}" alt="ShowroomImage" class="object-cover w-full h-full hover:transform hover:scale-105 hover:transition-transform hover:duration-300 hover:ease-in-out">
-
+                <div class="pt-48 w-full flex h-[900px] xl:px-[150px] 2xl:px-[200px] overflow-hidden">
+                    <div class="w-full h-full overflow-hidden">
+                        <img src="{{ URL('images/showroom/magasinMaisonErnestoDevanture.png') }}" alt="ShowroomImage" class="object-cover w-full h-full hover:transform hover:scale-105 hover:transition-transform hover:duration-300 hover:ease-in-out">
+                    </div>
                 </div>
                 <div class="w-full h-full flex flex-col items-center justify-center md:px-[50px] lg:px-[100px] xl:px-[150px] 2xl:px-[200px]">
                     <h1 class=" text-4xl p-5 border-b border-[#6e4836] ">Maison Ernesto</h1>
