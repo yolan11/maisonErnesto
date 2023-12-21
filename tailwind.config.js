@@ -7,7 +7,12 @@ export default {
       "./resources/**/**.vue",
   ],
   theme: {
-    extend: {},
+    extend: {
+        spacing: {
+            'calc-100-minus-280': 'calc(100% - 280px)',
+            'calc-100-minus-50': 'calc(100% - 60px)',
+        },
+    },
   },
   plugins: [forms],
 }

@@ -11,9 +11,19 @@ class DashboardController extends Controller
 {
     public function index()
     {
+        return view('Admin.AdminPage.index');
+    }
+
+    public function showAdminUser()
+    {
         $users = User::all();
+        return view('Admin.AdminPage.user', compact('users'));
+    }
+
+    public function showAdminBrand()
+    {
         $brands = Brand::all();
-        return view('adminView.dashboard', compact('users','brands'));
+        return view('Admin.AdminPage.brand', compact('brands'));
     }
 
 

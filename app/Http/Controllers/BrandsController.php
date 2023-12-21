@@ -13,8 +13,22 @@ class BrandsController extends Controller
     public function index()
     {
         $brands = Brand::all();
-        return view('Brands', compact('brands'));
+        return view('Brand.BrandPage.index', compact('brands'));
     }
+
+    public function showBrandCompagny()
+    {
+        $brands = Brand::all();
+        return view('Brand.BrandPage.compagny', compact('brands'));
+    }
+
+    public function showBrandCustomer()
+    {
+        $brands = Brand::all();
+        return view('Brand.BrandPage.customer', compact('brands'));
+    }
+
+
 
     public function store(Request $request)
     {
@@ -24,9 +38,12 @@ class BrandsController extends Controller
             'image' => 'required|string',
         ]);
 
-        Brand::create($data);
+        $newBrand = Brand::create($data);
 
-        return redirect('/dashboard')->with('successAddBrand', 'Marque importée avec succès');
+        // Récupérer le nom de la marque nouvellement créée depuis la variable $newBrand
+        $newBrandName = $newBrand->marque;
+
+        return redirect('/dashboard/brand')->with('successAddBrand', "La marque $newBrandName a été importée avec succès");
     }
 
     public function destroy($id)
@@ -34,31 +51,32 @@ class BrandsController extends Controller
         $brand = Brand::find($id);
 
         if (!$brand) {
-            return redirect('/dashboard')->with('errorDeleteBrand', 'Marque non trouvée');
+            return redirect('/dashboard/brand')->with('errorDeleteBrand', 'Marque non trouvée');
         }
+
+        $deletedBrandName = $brand->marque;
 
         $brand->delete();
 
-        return redirect('/dashboard')->with('successDeleteBrand', 'Marque supprimée avec succès');
+        return redirect('/dashboard/brand')->with('successDeleteBrand', "La marque $deletedBrandName a été supprimée avec succès");
     }
 
-    public function update(Request $request, $id)
-    {
-        $brand = Brand::find($id);
+    public function update(Request $request, $id){
+        // Récupérer la marque à mettre à jour
+        $brand = Brand::findOrFail($id);
 
-        if (!$brand) {
-            return redirect('/dashboard')->with('errorEditBrand', 'Marque non trouvée');
-        }
+        // Mettre à jour les champs avec les nouvelles valeurs
+        $brand->marque = $request->input('editMarque');
+        $brand->lienSiteWeb = $request->input('editLienSiteWeb');
+        $brand->image = $request->input('editImage');
 
-        $data = $request->validate([
-            'marque' => 'required|string',
-            'lienSiteWeb' => 'required|string',
-            'image' => 'required|string',
-        ]);
+        // Sauvegarder les modifications
+        $brand->save();
 
-        $brand->update($data);
+        $oldBrandName = $brand->marque;
 
-        return redirect('/dashboard')->with('successEditBrand', 'Marque modifiée avec succès');
+        // Rediriger avec un message de succès ou autre
+        return redirect('/dashboard/brand')->with('successUpdateBrand', "La marque $oldBrandName a été mise à jour avec succès.");
     }
 
 }

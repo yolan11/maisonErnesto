@@ -27,6 +27,6 @@ class RegisterController extends Controller
 
         User::create($data);
 
-        return redirect('/login')->with('success', 'Inscription réussie.');
+        return redirect('/dashboard/user')->with('success', 'Inscription réussie.');
     }
 }

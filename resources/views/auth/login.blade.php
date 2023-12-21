@@ -25,9 +25,6 @@
                 <button class="w-full bg-[black] py-3 text-center text-white" type="submit">Se connecter</button>
             </div>
         </form>
-        <a class="mt-5 w-full" href="{{ route('Register.create') }}">
-            <button class="w-full bg-[black] py-3 text-center text-white" type="submit">Créer un compte</button>
-        </a>
     </div>
 </div>
 </body>

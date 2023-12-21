@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Auth\LoginRequest;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
 use Illuminate\Http\Request;
@@ -27,6 +28,22 @@ class LoginController extends Controller
         // L'authentification a échoué
         return back()->withErrors(['email' => 'Email ou mot de passe incorrect.']);
     }
+
+    public function destroy($id)
+    {
+        $user = User::find($id);
+
+        if (!$user) {
+            return redirect('/dashboard/user')->with('errorDeleteBrand', 'Marque non trouvée');
+        }
+
+        $deletedUser = $user->name;
+
+        $user->delete();
+
+        return redirect('/dashboard/user')->with('successDeleteBrand', "La marque $deletedUser a été supprimée avec succès");
+    }
+
 
     public function logout(Request $request)
     {
