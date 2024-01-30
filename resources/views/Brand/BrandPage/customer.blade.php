@@ -11,13 +11,13 @@
                 </p>
             </div>
             <div class="w-full flex h-full flex-col">
-                <div class="w-full flex h-14 border-y border-gray-300">
-                    <div class="w-10/12">
+                <div class="grid grid-cols-1 sm:grid-cols-3 w-full flex h-full border-y border-gray-300">
+                    <div class="col-span-1 sm:col-span-2 h-14">
                         <input id="searchbar" onkeyup="search()" class=" center-text w-full h-full border-none "
                                type="search"
                                placeholder="Rechercher une marque" name="search">
                     </div>
-                    <div class="relative w-2/12 flex justify-center items-center border-l border-gray-300">
+                    <div class="relative col-span-1 sm:col-span-1 flex justify-center items-center h-14">
                         <button id="openModal" class="flex justify-center items-center gap-2">
                             <span>Categorie</span>
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
@@ -35,7 +35,7 @@
                                 </div>
                                 <div class="flex items-center justify-center w-full h-full">
                                     <a href="{{ route('brandsPageCustomer') }}"
-                                       class="w-full h-full hover:bg-gray-200 px-4 py-2 font-bold text-center">Particulier</a>
+                                       class="w-full h-full hover:bg-gray-200 px-4 py-2 text-center">Particulier</a>
                                 </div>
                             </div>
                         </div>

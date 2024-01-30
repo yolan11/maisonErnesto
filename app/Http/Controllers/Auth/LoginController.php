@@ -41,8 +41,35 @@ class LoginController extends Controller
 
         $user->delete();
 
-        return redirect('/dashboard/user')->with('successDeleteBrand', "La marque $deletedUser a été supprimée avec succès");
+        return redirect('/dashboard/user')->with('successDeleteBrand', "L'utilisateur $deletedUser a été supprimée avec succès");
     }
+
+    public function update(Request $request, $id)
+    {
+        // Récupérer l'utilisateur à mettre à jour
+        $user = User::find($id);
+
+        // Vérifier si l'utilisateur existe
+        if (!$user) {
+            return back()->withErrors(['message' => 'Utilisateur non trouvé']);
+        }
+
+        // Mettre à jour les champs nécessaires
+        $user->name = $request->input('editName');
+        $user->email = $request->input('editEmail');
+
+        // Vérifier si un nouveau mot de passe est fourni
+        if ($request->has('editPassword') && $request->input('editPassword')) {
+            // Hasher le nouveau mot de passe
+            $user->password = bcrypt($request->input('editPassword'));
+        }
+
+        // Enregistrer les modifications
+        $user->save();
+
+        return redirect('/dashboard/user')->with('success', 'Profil mis à jour avec succès');
+    }
+
 
 
     public function logout(Request $request)

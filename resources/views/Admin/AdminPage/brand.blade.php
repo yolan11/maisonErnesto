@@ -3,7 +3,14 @@
 @section('content')
     <section id="content" class=" flex flex-col z-10 ml-[280px] h-screen px-6 pb-6 pt-[82px] bg-gray-300">
         <div class="relative w-full h-full flex flex-col ">
-            <div class="w-full h-full flex justify-center items-center">
+
+            <!-- Bouton affichage modal création de marque -->
+            <div class="w-full flex justify-start items-center">
+                <button id="newBrandButton" class="p-4 bg-black text-white flex justify-center items-center">Créer une marque</button>
+            </div>
+
+            <!-- Affichage message -->
+            <div class=" flex justify-center items-center">
                 <div class="w-full h-full flex flex-col">
                     @if (session('successAddBrand'))
                         <div class="w-full bg-yellow-400 alert alert-success flex justify-center items-center">
@@ -20,15 +27,11 @@
                             {{ session('successUpdateBrand') }}
                         </div>
                     @endif
-                    <form action="{{ route('Brand.store') }}" method="POST" class="w-full h-full flex flex-col justify-center align-center">
-                        @csrf
-                        <input name="marque" id="marque" type="text" placeholder="Nom de la marque" class="m-4" required>
-                        <input name="lienSiteWeb" id="lienSiteWeb" type="text" placeholder="Lien du site web" class="m-4" required>
-                        <input name="image" id="image" type="text" placeholder="Logo de la marque" class="m-4" required>
-                        <button type="submit" class="bg-black m-4 py-2 text-white">Importer la marque</button>
-                    </form>
+
                 </div>
             </div>
+
+            <!-- Tableau pour afficher les marques -->
             <div class="w-full h-full overflow-y-scroll flex flex-col gap-4">
                 <table class="table-auto border-collapse border border-slate-400">
                     <thead class=" bg-gray-200">
@@ -46,7 +49,11 @@
                             <td class="border border-slate-300 p-4 truncate max-w-xs">{{ $brand->marque }}</td>
                             <td class="border border-slate-300 p-4 truncate max-w-xs">{{ $brand->lienSiteWeb }}</td>
                             <td class="border border-slate-300 p-4 truncate max-w-xs">{{ $brand->image }}</td>
-                            <td class="border border-slate-300 max-w-xs"><button id="edit-btn" class="w-full p-4 h-full bg-blue-300" value="{{ $brand->id }}">Modifier</button></td>
+                            <td class="border border-slate-300 max-w-xs">
+                                <button id="edit-btn" class="w-full p-4 h-full bg-blue-300" value="{{ $brand->id }}">
+                                    Modifier
+                                </button>
+                            </td>
                             <td class="border border-slate-300 max-w-xs">
                                 <form action="{{ route('Brand.destroy', $brand->id) }}" method="POST">
                                     @csrf
@@ -59,7 +66,8 @@
                     </tbody>
                 </table>
             </div>
-            <!-- Structure HTML de la modal -->
+
+            <!-- Modal pour modifier une marque -->
             <div id="myModal" class="absolute bg-black w-full h-full bg-opacity-50 flex justify-center items-center hidden">
                 <div class="bg-white w-[500px] flex justify-center items-center">
                     <div class=" w-full h-full flex flex-col justify-center items-center">
@@ -69,7 +77,7 @@
                             <input name="editMarque" id="editMarque" type="text" placeholder="Nom de la marque" class="m-4" required>
                             <input name="editLienSiteWeb" id="editLienSiteWeb" type="text" placeholder="Lien du site web" class="m-4" required>
                             <input name="editImage" id="editImage" type="text" placeholder="Logo de la marque" class="m-4" required>
-                            <button id="saveChanges" type="submit" class="bg-black m-4 py-2 text-white">Mettre à jour</button>
+                            <button id="saveChanges" type="submit" class="bg-black m-4 py-2 text-white">Mettre à jour la marque</button>
                         </form>
                         <div class="w-full p-4 flex">
                             <button id="close" class="w-full bg-black py-2 text-white">Annuler</button>
@@ -77,11 +85,30 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Modal pour créer une marque -->
+            <div id="brandCreateModal" class="absolute bg-black w-full h-full bg-opacity-50 flex justify-center items-center hidden">
+                <div class="bg-white w-[500px] flex justify-center items-center">
+                    <div class=" w-full h-full flex flex-col justify-center items-center">
+                        <form action="{{ route('Brand.store') }}" method="POST" class="w-full h-full flex flex-col justify-center align-center">
+                            @csrf
+                            <input name="marque" id="marque" type="text" placeholder="Nom de la marque" class="m-4" required>
+                            <input name="lienSiteWeb" id="lienSiteWeb" type="text" placeholder="Lien du site web" class="m-4" required>
+                            <input name="image" id="image" type="text" placeholder="Logo de la marque" class="m-4" required>
+                            <button type="submit" class="bg-black m-4 py-2 text-white">Créer une marque</button>
+                        </form>
+                        <div class="w-full p-4 flex">
+                            <button id="closeBrandCreateModal" class="w-full bg-black py-2 text-white">Annuler</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
 
     </section>
 
-
+    <!-- Script pour afficher la modal d'update -->
     <script>
         // Récupérer tous les boutons "Modifier"
         var editButtons = document.querySelectorAll('#edit-btn');
@@ -117,6 +144,25 @@
         // Gérer la fermeture de la modal
         document.querySelector('#close').addEventListener('click', function() {
             document.getElementById('myModal').style.display = 'none';
+        });
+    </script>
+
+    <!-- Script pour afficher la modal de création -->
+    <script>
+        // Récupérer tous les boutons "Modifier"
+        var editButtons = document.querySelectorAll('#newBrandButton');
+
+        // Boucler sur chaque bouton "Modifier"
+        editButtons.forEach(function(button) {
+            button.addEventListener('click', function() {
+                console.log('1')
+                document.getElementById('brandCreateModal').style.display = 'flex';
+            });
+        });
+
+        // Gérer la fermeture de la modal
+        document.querySelector('#closeBrandCreateModal').addEventListener('click', function() {
+            document.getElementById('brandCreateModal').style.display = 'none';
         });
     </script>
 

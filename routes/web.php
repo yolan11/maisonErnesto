@@ -25,6 +25,7 @@ Route::middleware('guest')->group(function () {
         ->name('brandsPageCustomer');
     Route::get('/showroom', function(){return view('Showroom');})
         ->name('Showroom');
+    Route::get('/phpinfo',function() {return view('phpversion');});
 });
 
 Route::middleware('auth')->group(function () {
@@ -41,6 +42,7 @@ Route::middleware('auth')->group(function () {
 
     //User routes
     Route::delete('/user/destroy/{id}', [LoginController::class, 'destroy'])->name('User.destroy');
+    Route::put('/user/update/{id}', [LoginController::class, 'update'])->name('User.update');
 
 });
 require __DIR__.'/auth.php';

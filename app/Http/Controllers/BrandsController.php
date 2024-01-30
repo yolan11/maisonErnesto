@@ -65,6 +65,8 @@ class BrandsController extends Controller
         // Récupérer la marque à mettre à jour
         $brand = Brand::findOrFail($id);
 
+        $oldBrandName = $brand->marque;
+
         // Mettre à jour les champs avec les nouvelles valeurs
         $brand->marque = $request->input('editMarque');
         $brand->lienSiteWeb = $request->input('editLienSiteWeb');
@@ -72,8 +74,6 @@ class BrandsController extends Controller
 
         // Sauvegarder les modifications
         $brand->save();
-
-        $oldBrandName = $brand->marque;
 
         // Rediriger avec un message de succès ou autre
         return redirect('/dashboard/brand')->with('successUpdateBrand', "La marque $oldBrandName a été mise à jour avec succès.");

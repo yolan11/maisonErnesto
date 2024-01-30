@@ -11,16 +11,20 @@
 </head>
 <body class="">
 @include('layouts/Header')
-<div class="w-full h-[100svh] sm:h-[50vh] bg-fixed bg-cover bg-bottom relative z-[-1]" style="background-image: url('{{ URL('images/showroom/magasinMaisonErnestoDevanture.png') }}');">
+
+<div class="relative flex items-center justify-center w-full h-[100svh] sm:h-[50vh]">
+    <div class="absolute w-full h-full bg-fixed bg-cover bg-bottom blur-sm" style="background-image: url('{{ URL('images/showroom/magasinMaisonErnestoDevanture.png') }}');">
+
+    </div>
     <div class="absolute w-full h-full flex justify-center items-center">
-        <h1 class="uppercase text-4xl sm:text-9xl text-white tracking-widest font-medium mix-blend-difference">Maison ernesto</h1>
+        <h1 class=" uppercase text-4xl sm:text-6xl md:text-7xl 2xl:text-9xl text-white tracking-widest font-medium mix-blend-difference">Maison ernesto</h1>
     </div>
 </div>
 
 <div class="w-full h-full bg-white">
     <div class="w-full h-full">
         <div class="grid grid-cols-1 lg:grid-cols-2">
-            <div class="col-span-1 w-full h-[50vh] carousel1">
+            <div class="col-span-1 w-full h-[50vh] carousel1 overflow-hidden">
                 <div class="w-full h-full relative flex" id="image1">
                     <img src="{{ URL('images/pro.jpg') }}" alt="Image 1" class="w-full h-full object-cover">
                     <h1 class="m-6 w-auto h-auto text-white text-6xl absolute top-0 left-0 z-10
@@ -46,11 +50,11 @@
                     </h1>
                 </div>
             </div>
-            <div class="col-span-1 w-full h-[50vh] bg-white p-6">
+            <div class="col-span-1 w-full h-[50vh] bg-white p-6 overflow-hidden">
                 <div class="w-full h-full flex justify-center items-center">
-                    <div class="flex flex-col px-6 sm:px-32 gap-10 flex justify-center items-start">
-                        <h1 class=" text-[#A68069] text-3xl">Entreprise</h1>
-                        <p class="leading-relaxed">Découvrez notre catalogue de marque adapté aux entreprises.
+                    <div class="w-full h-full flex flex-col px-6 gap-10 flex justify-center items-start">
+                        <h1 class="w-full text-[#A68069] text-3xl text-center">Entreprise</h1>
+                        <p class="w-full leading-relaxed text-center text-xl">Découvrez notre catalogue de marque adapté aux entreprises.
                         </p>
                         <a href="{{ route('brandsPageCompagny') }}" class="w-full flex justify-center items-center
                           hover:text-[#A68069] group ">
@@ -64,7 +68,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-span-1 w-full h-[50vh] overflow-hidden carousel2">
+            <div class="col-span-1 w-full h-[50vh] overflow-hidden carousel2 overflow-hidden">
                 <div class="w-full h-full group relative flex" id="image1">
                     <img src="{{ URL('images/Carrousel/cookut1.jpg') }}" alt="Image 1" class="w-full h-full object-cover
                     transition duration-200 group-hover:scale-105 group-hover:duration-200 group-hover:transition">
@@ -100,7 +104,7 @@
                     </h1>
                 </div>
             </div>
-            <div class="col-span-1 w-full h-[50vh] overflow-hidden carousel3">
+            <div class="col-span-1 w-full h-[50vh] overflow-hidden carousel3 overflow-hidden">
                 <div class="relative w-full h-full group flex" id="image1">
                     <img src="{{ URL('images/Carrousel/joli1.webp') }}" alt="Image 1" class="w-full h-full
                     object-cover transition duration-200 group-hover:scale-105 group-hover:duration-200
@@ -134,11 +138,11 @@
                     </h1>
                 </div>
             </div>
-            <div class="col-span-1 w-full h-[50vh] bg-white p-6">
+            <div class="col-span-1 w-full h-[50vh] bg-white p-6 overflow-hidden">
                 <div class="w-full h-full flex justify-center items-center">
-                    <div class="flex flex-col px-6 sm:px-32 gap-10 flex justify-center items-start">
-                        <h1 class="text-3xl text-[#A68069]">Particulier</h1>
-                        <p class="leading-relaxed">Découvrez notre catalogue de marque adapté aux particuliers.
+                    <div class="w-full h-full flex flex-col px-6 gap-10 flex justify-center items-start">
+                        <h1 class="w-full text-3xl text-[#A68069] text-center">Particulier</h1>
+                        <p class="w-full leading-relaxed text-center text-xl">Découvrez notre catalogue de marque adapté aux particuliers.
                         </p>
                         <a href="{{ route('brandsPageCustomer') }}" class="w-full flex justify-center items-center
                           hover:text-[#A68069] group ">
@@ -152,7 +156,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-span-1 w-full h-[50vh] carousel4">
+            <div class="col-span-1 w-full h-[50vh] carousel4 overflow-hidden">
                 <div class="w-full h-full relative flex" id="image1">
                     <img src="{{ URL('images/Carrousel/vibia1.webp') }}" alt="Image 1" class="w-full h-full object-cover">
                     <h1 class="m-6 w-auto h-auto text-white text-6xl absolute top-0 left-0 z-10
@@ -266,5 +270,10 @@
 
 </body>
 </html>
+
+
+
+
+
 
 
