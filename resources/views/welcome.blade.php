@@ -1,10 +1,9 @@
 <!doctype html>
-<html>
+<html lang="fr">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale1=0">
     @vite('resources/css/app.css')
-    @vite('resources/css/slider.css')
     <title>Maison Ernesto</title>
 
     <link rel="icon" type="image/x-icon" href="/public/images/logoSiteWeb/logo2.png">

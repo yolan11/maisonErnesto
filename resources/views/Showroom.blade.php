@@ -1,11 +1,11 @@
 <!doctype html>
-<html>
+<html lang="fr">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale1=0">
     @vite('resources/css/app.css')
     <title>Showroom - Maison Ernesto</title>
-    <link rel="icon" type="image/x-icon" href="/public/images/logoSiteWeb/logo2.png">
+    <link rel="icon" type="image/x-icon" href="/public/images/logoSiteWeb/logo1.png">
     <style>
         .header {
             transition: background-color 0.3s;
@@ -14,6 +14,7 @@
 </head>
 <body class="">
 @include('layouts/Header')
+
 <div class="w-full flex h-[50vh] overflow-hidden">
     <div class="w-full h-full overflow-hidden">
         <img src="{{ URL('images/showroom/magasinMaisonErnestoDevanture.png') }}" alt="ShowroomImage" class="object-cover w-full h-full hover:transform hover:scale-105 hover:transition-transform hover:duration-300 hover:ease-in-out">
@@ -32,31 +33,31 @@
     <div class="col-span-1 h-[50vh]">
         <div class="w-full h-full flex flex-col justify-center items-center">
             <ul class="w-full sm:w-4/5 h-full flex flex-col items-center justify-center p-6">
-                <div class="w-full flex justify-start">
+                <li class="w-full flex justify-start">
                     <h1 class="p-2 text-4xl">Horaires</h1>
-                </div>
-                <div class="w-full flex justify-start">
-                    <li class="p-2 text-xl">Mardi : 10h00 - 13h00 / 14h30- 19h</li>
-                </div>
-                <div class="w-full flex justify-start">
-                    <li class="p-2 text-xl">Mercredi : 10h00 - 13h00 / 14h30- 19h</li>
-                </div>
-                <div class="w-full flex justify-start">
-                    <li class="p-2 text-xl">Jeudi : 10h00 - 13h00 / 14h30- 19h</li>
-                </div>
-                <div class="w-full flex justify-start">
-                    <li class="p-2 text-xl">Vendredi : 10h00 - 13h00 / 14h30- 19h</li>
-                </div>
-                <div class="w-full flex justify-start">
-                    <li class="p-2 text-xl">Samedi : 10h00 - 19h00</li>
-                </div>
-                <div class="w-full flex justify-start">
-                    <li class="p-2 text-xl">Dimanche : Fermé</li>
-                </div>
-                <div class="flex w-full flex-col justify-center items-center">
+                </li>
+                <li class="w-full flex justify-start">
+                    <p class="p-2 text-xl">Mardi : 10h00 - 13h00 / 14h30- 19h</p>
+                </li>
+                <li class="w-full flex justify-start">
+                    <p class="p-2 text-xl">Mercredi : 10h00 - 13h00 / 14h30- 19h</p>
+                </li>
+                <li class="w-full flex justify-start">
+                    <p class="p-2 text-xl">Jeudi : 10h00 - 13h00 / 14h30- 19h</p>
+                </li>
+                <li class="w-full flex justify-start">
+                    <p class="p-2 text-xl">Vendredi : 10h00 - 13h00 / 14h30- 19h</p>
+                </li>
+                <li class="w-full flex justify-start">
+                    <p class="p-2 text-xl">Samedi : 10h00 - 19h00</p>
+                </li>
+                <li class="w-full flex justify-start">
+                    <p class="p-2 text-xl">Dimanche : Fermé</p>
+                </li>
+                <li class="flex w-full flex-col justify-center items-center">
                     <h1 id="open" class="bg-green-300 text-2xl uppercase py-2 px-4 text-center text-white rounded-xl shadow-2xl">Ouvert</h1>
                     <h1 id="close" class="bg-red-600 text-2xl uppercase py-2 px-4 text-center text-white rounded-xl shadow-2xl">Fermé</h1>
-                </div>
+                </li>
             </ul>
         </div>
     </div>

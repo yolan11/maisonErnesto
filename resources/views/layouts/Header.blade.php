@@ -6,7 +6,7 @@
     </div>
     <div class="w-full h-full flex justify-end items-center gap-2 sm:gap-4">
         <a href="{{ route('Home') }}" title="Redirection vers la page d'accueil" data-text="home" class="text-white font-normal text-xl md:text-2xl {{ Request::is('/') ? 'active' : '' }}">Accueil</a>
-        <a href="{{ route('Brand') }}" title="Redirection vers la page marque" data-text="brands" class=" text-white font-normal text-xl md:text-2xl pl-1 {{ Request::is('Gallery') ? 'active' : '' }}">Marques</a>
-        <a href="{{ route('Showroom') }}" title="Redirection vers la page showroom" data-text="showroom" class=" text-white font-normal text-xl md:text-2xl pl-1 {{ Request::is('Reservation') ? 'active' : '' }}">Showroom</a>
+        <a href="{{ route('Brand') }}" title="Redirection vers la page marque" data-text="brands" class=" text-white font-normal text-xl md:text-2xl pl-1 {{ Request::is('/brands') ? 'active' : '' }}">Marques</a>
+        <a href="{{ route('Showroom') }}" title="Redirection vers la page showroom" data-text="showroom" class=" text-white font-normal text-xl md:text-2xl pl-1 {{ Request::is('/showroom') ? 'active' : '' }}">Showroom</a>
     </div>
 </header>
