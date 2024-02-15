@@ -6,13 +6,27 @@
     @vite('resources/css/app.css')
     <title>Maison Ernesto</title>
 
-    <link rel="icon" type="image/x-icon" href="/public/images/logoSiteWeb/logo2.png">
+    <link rel="icon" type="image/x-icon" href="{{ URL('images/logoSiteWeb/logo1.png') }}" sizes="32x32">
+    <link rel="icon" type="image/x-icon" href="{{ URL('images/logoSiteWeb/logo1.png') }}" sizes="192x192">
+
+    <script>
+        window.axeptioSettings = {
+            clientId: "65cceb7b27a5c743c57817db",
+            cookiesVersion: "maisonernesto-fr-EU",
+        };
+
+        (function(d, s) {
+            var t = d.getElementsByTagName(s)[0], e = d.createElement(s);
+            e.async = true; e.src = "//static.axept.io/sdk.js";
+            t.parentNode.insertBefore(e, t);
+        })(document, "script");
+    </script>
 </head>
 <body class="">
 @include('layouts/Header')
 
 <div class="relative flex items-center justify-center w-full h-[100svh] sm:h-[50vh]">
-    <div class="absolute w-full h-full bg-fixed bg-cover bg-bottom blur-sm" style="background-image: url('{{ URL('images/showroom/magasinMaisonErnestoDevanture.png') }}');">
+    <div class="absolute w-full h-full bg-fixed bg-cover bg-bottom blur-sm overflow-hidden" style="background-image: url('{{ URL('images/showroom/magasinMaisonErnestoDevanture.png') }}');">
 
     </div>
     <div class="absolute w-full h-full flex justify-center items-center">
@@ -39,7 +53,7 @@
                 <div class="w-full h-full hidden relative flex" id="image3">
                     <img src="{{ URL('images/Carrousel/treku2.webp') }}" alt="Image 3" class="w-full h-full object-cover">
                     <h1 class="m-6 w-auto h-auto text-white text-6xl absolute bottom-0 right-0 z-10
-                     mix-blend-difference">treku
+                     mix-blend-difference">Treku
                     </h1>
                 </div>
                 <div class="w-full h-full hidden relative flex" id="image4">
@@ -49,7 +63,7 @@
                     </h1>
                 </div>
             </div>
-            <div class="col-span-1 w-full h-[50vh] bg-white p-6 overflow-hidden">
+            <div class="col-span-1 w-full h-[50vh] bg-white overflow-hidden">
                 <div class="w-full h-full flex justify-center items-center">
                     <div class="w-full h-full flex flex-col px-6 gap-10 flex justify-center items-start">
                         <h1 class="w-full text-[#A68069] text-3xl text-center">Entreprise</h1>
@@ -67,7 +81,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-span-1 w-full h-[50vh] overflow-hidden carousel2 overflow-hidden">
+            <div class="col-span-1 w-full h-[50vh] carousel2 overflow-hidden">
                 <div class="w-full h-full group relative flex" id="image1">
                     <img src="{{ URL('images/Carrousel/cookut1.jpg') }}" alt="Image 1" class="w-full h-full object-cover
                     transition duration-200 group-hover:scale-105 group-hover:duration-200 group-hover:transition">
@@ -103,7 +117,7 @@
                     </h1>
                 </div>
             </div>
-            <div class="col-span-1 w-full h-[50vh] overflow-hidden carousel3 overflow-hidden">
+            <div class="col-span-1 w-full h-[50vh] carousel3 overflow-hidden">
                 <div class="relative w-full h-full group flex" id="image1">
                     <img src="{{ URL('images/Carrousel/joli1.webp') }}" alt="Image 1" class="w-full h-full
                     object-cover transition duration-200 group-hover:scale-105 group-hover:duration-200
@@ -137,7 +151,7 @@
                     </h1>
                 </div>
             </div>
-            <div class="col-span-1 w-full h-[50vh] bg-white p-6 overflow-hidden">
+            <div class="col-span-1 w-full h-[50vh] bg-white overflow-hidden">
                 <div class="w-full h-full flex justify-center items-center">
                     <div class="w-full h-full flex flex-col px-6 gap-10 flex justify-center items-start">
                         <h1 class="w-full text-3xl text-[#A68069] text-center">Particulier</h1>
@@ -266,6 +280,7 @@
         // Ajoutez autant d'appels à setupCarousel que nécessaire pour vos divs carrousel supplémentaires
 
     </script>
+
 
 </body>
 </html>

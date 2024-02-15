@@ -44,7 +44,7 @@
                 <div
                     class="w-full flex h-14 border-b border-gray-300 bg-gray-200 justify-start items-center px-4 gap-4">
                     <p class="">Filtre</p>
-                    <a href="{{ route('Brand') }}"
+                    <a href="{{ route('Brands') }}"
                        class=" flex justify-center items-center gap-2 bg-white px-4 py-1 rounded-xl">
                         <span>Entreprise</span>
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"

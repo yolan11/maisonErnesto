@@ -18,14 +18,13 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('guest')->group(function () {
     Route::get('/', function () {return view('welcome');})->name('Home');
-    Route::get('/brands', [BrandsController::class, 'index'])->name('Brand');
+    Route::get('/Brands', [BrandsController::class, 'index'])->name('Brands');
     Route::get('/brands/categorie/entreprise', [BrandsController::class, 'showBrandCompagny'])
         ->name('brandsPageCompagny');
     Route::get('/brands/categorie/particulier', [BrandsController::class, 'showBrandCustomer'])
         ->name('brandsPageCustomer');
-    Route::get('/showroom', function(){return view('Showroom');})
+    Route::get('/Showroom', function(){return view('Showroom');})
         ->name('Showroom');
-    Route::get('/phpinfo',function() {return view('phpversion');});
 });
 
 Route::middleware('auth')->group(function () {

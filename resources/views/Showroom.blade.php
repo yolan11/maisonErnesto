@@ -3,21 +3,30 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale1=0">
-    @vite('resources/css/app.css')
     <title>Showroom - Maison Ernesto</title>
     <link rel="icon" type="image/x-icon" href="/public/images/logoSiteWeb/logo1.png">
-    <style>
-        .header {
-            transition: background-color 0.3s;
-        }
-    </style>
+
+    @vite('resources/css/app.css')
+
+    <script>
+        window.axeptioSettings = {
+            clientId: "65cceb7b27a5c743c57817db",
+            cookiesVersion: "maisonernesto-fr-EU",
+        };
+
+        (function(d, s) {
+            var t = d.getElementsByTagName(s)[0], e = d.createElement(s);
+            e.async = true; e.src = "//static.axept.io/sdk.js";
+            t.parentNode.insertBefore(e, t);
+        })(document, "script");
+    </script>
 </head>
 <body class="">
 @include('layouts/Header')
 
-<div class="w-full flex h-[50vh] overflow-hidden">
-    <div class="w-full h-full overflow-hidden">
-        <img src="{{ URL('images/showroom/magasinMaisonErnestoDevanture.png') }}" alt="ShowroomImage" class="object-cover w-full h-full hover:transform hover:scale-105 hover:transition-transform hover:duration-300 hover:ease-in-out">
+<div class="relative flex items-center justify-center w-full h-[50vh]">
+    <div class="absolute w-full h-full bg-fixed bg-cover bg-bottom overflow-hidden" style="background-image: url('{{ URL('images/showroom/magasinMaisonErnestoDevanture.png') }}');">
+
     </div>
 </div>
 

@@ -7,6 +7,18 @@
     <title>Marques - Maison Ernesto</title>
     <link rel="icon" type="image/x-icon" href="/public/images/logoSiteWeb/logo2.png">
 
+    <script>
+        window.axeptioSettings = {
+            clientId: "65cceb7b27a5c743c57817db",
+            cookiesVersion: "maisonernesto-fr-EU",
+        };
+
+        (function(d, s) {
+            var t = d.getElementsByTagName(s)[0], e = d.createElement(s);
+            e.async = true; e.src = "//static.axept.io/sdk.js";
+            t.parentNode.insertBefore(e, t);
+        })(document, "script");
+    </script>
 </head>
 <body class="bg-white">
 @include('layouts.Header')
@@ -81,7 +93,6 @@
 
     // Écouter le clic sur le bouton d'ouverture de la modal
     openModalButton.addEventListener('click', openModal);
-</script>
 </script>
 
 </body>
