@@ -32,18 +32,20 @@ class BrandsController extends Controller
 
     public function store(Request $request)
     {
-        $data = $request->validate([
-            'marque' => 'required|string',
-            'lienSiteWeb' => 'required|string',
-            'image' => 'required|string',
+        // Validation des données
+        $request->validate([
+            'marque' => 'required',
+            'logo' => 'required', // Limitez la taille et les types d'image selon vos besoins
+            'categorie' => 'required', // Assurez-vous que la catégorie est soit "entreprise" soit "particulier"
         ]);
 
-        $newBrand = Brand::create($data);
+        $brand = new Brand();
+        $brand->marque = $request->marque;
+        $brand->image = $request->logo;
+        $brand->categorie = $request->categorie;
+        $brand->save();
 
-        // Récupérer le nom de la marque nouvellement créée depuis la variable $newBrand
-        $newBrandName = $newBrand->marque;
-
-        return redirect('/dashboard/brand')->with('successAddBrand', "La marque $newBrandName a été importée avec succès");
+        return redirect('/dashboard/brand')->with('success', 'image importé avec succès');
     }
 
     public function destroy($id)
@@ -69,8 +71,8 @@ class BrandsController extends Controller
 
         // Mettre à jour les champs avec les nouvelles valeurs
         $brand->marque = $request->input('editMarque');
-        $brand->lienSiteWeb = $request->input('editLienSiteWeb');
-        $brand->image = $request->input('editImage');
+        $brand->categorie = $request->input('editCategorie');
+        $brand->image = $request->input('editLogo');
 
         // Sauvegarder les modifications
         $brand->save();

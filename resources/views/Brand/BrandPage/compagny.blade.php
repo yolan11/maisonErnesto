@@ -4,10 +4,8 @@
     <div class="pt-20 min-h-screen">
         <div class="w-full h-full flex items-center justify-center flex-col">
             <div class="w-full h-[250px] gap-4 flex flex-col justify-center items-center">
-                <h1 class="text-4xl font-bold">Workspace sale</h1>
-                <p class="">Our thoughtfully designed workspace objects are crafted in limited runs. Improve your
-                    productivity
-                    and organization with these sale items before we run out.
+                <h1 class="text-4xl font-bold">NOS MARQUES</h1>
+                <p class="">Depuis 2006 votre magasin ernesto ne cesse de vous proposer le meilleur catalogue de marque.
                 </p>
             </div>
             <div class="w-full flex h-full flex-col">
@@ -59,10 +57,10 @@
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 m-16" id="brandsContainer">
             @foreach ($brands as $brand)
                 @if ($brand->categorie === 'entreprise')
-                    <div id="brand" name="{{ $brand->marque }}" class="flex items-center justify-center m-4">
+                    <div id="brand" name="{{ $brand->marque }}" class="h-[50px] flex items-center justify-center m-4">
                         <a href="{{ $brand->lienSiteWeb }}"
-                           class="flex justify-center align-center" target="_blank">
-                            <img src="{{ $brand->image }}" class="w-2/5">
+                           class="flex justify-center align-center w-full h-full" target="_blank">
+                            <img src="{{ $brand->image }}" class="object-contain" alt="Logo {{ $brand->marque }}">
                         </a>
                     </div>
                 @endif

@@ -6,7 +6,7 @@ use App\Http\Controllers\BrandsController;
 use Illuminate\Support\Facades\Route;
 
 Route::middleware('guest')->group(function () {
-    Route::get('/login', [LoginController::class, 'create'])->name('Login.create');
+    Route::get('/dashboard/login', [LoginController::class, 'create'])->name('Login.create');
 
     Route::post('/login/store', [LoginController::class, 'store'])->name('Login.store')->middleware('throttle:5,1');
 

@@ -4,17 +4,21 @@
             <div class="col-span-1 flex justify-center items-center">
                 <div class="w-full sm:w-3/5 flex-col flex gap-4">
                     <h1 class="flex w-auto h-auto justify-center items-center text-3xl text-white">MAISON ERNESTO</h1>
-                    <p class="flex w-auto h-auto justify-center items-center text-white text-xl text-center">Implantée depuis 17 ans au 80
-                        avenue du poteau à senlis, la maison ernesto est votre spécialiste dans le commerce de
-                        détail de meubles.
+                    <p class="flex w-auto h-auto justify-center items-center text-white text-xl text-center">
+                        Depuis 2006, En Partenariat avec les marques références du marché, l’Equipe Maison Ernesto vous
+                        accompagne dans la sélection de meubles, luminaires, objets de décoration… pour aménager vos
+                        intérieurs et jardins.
+                        Rendez-vous dans notre showroom de 800 m² à Senlis, 80 avenue du poteau, pour y découvrir
+                        nos univers.
+
                     </p>
 
                 </div>
             </div>
         </div>
         <div class="w-full h-full">
-            <div class="grid-cols-2 flex">
-                <div class="flex col-span-1 flex-col w-full m-6 gap-4 h-[250px]">
+            <div class="grid grid-cols-1 md:grid-cols-2 flex w-full h-full">
+                <div class="flex col-span-1 flex-col w-full p-6 gap-4 h-[250px]">
                     <h1 class="text-white font-bold text-xl uppercase">Contact</h1>
                     <div class="w-full border-b border-white"></div>
                     <a href="mailto:contact@maisonernesto.fr" class="flex w-auto h-auto justify-start items-center group">
@@ -36,7 +40,7 @@
                         <p class=" text-white py text-xl">80 Av. du Poteau, 60300 Chamant</p>
                     </a>
                 </div>
-                <div class="flex col-span-1 w-full m-6 flex-col gap-4 h-[250px]">
+                <div class="flex col-span-1 w-full p-6 flex-col gap-4 h-[250px]">
                     <h1 class="text-white text-xl font-bold uppercase">Liens utiles</h1>
                     <div class="w-full border-b border-white"></div>
                     <a href="{{ route('Home') }}" title="Redirection vers la page d'accueil" class="uppercase text-white text-xl ">Accueil</a>

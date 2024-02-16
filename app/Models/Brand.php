@@ -11,7 +11,7 @@ class Brand extends Model
 
     protected $fillable = [
         'marque',
-        'lienSiteWeb',
         'image',
+        'categorie',
     ];
 }

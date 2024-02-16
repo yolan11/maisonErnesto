@@ -33,6 +33,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/dashboard/user', [DashboardController::class, 'showAdminUser'])->name('DashboardUser');
     Route::get('/dashboard/brand', [DashboardController::class, 'showAdminBrand'])
         ->name('DashboardBrand');
+    Route::get('/dashboard/brand/error', [DashboardController::class, 'showAdminBrandError'])
+        ->name('DashboardBrandError');
+
 
     //Brand routes
     Route::post('/brands/store', [BrandsController::class, 'store'])->name('Brand.store');

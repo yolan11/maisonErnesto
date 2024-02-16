@@ -37,7 +37,7 @@
                     <thead class=" bg-gray-200">
                     <tr class="">
                         <th class="border border-slate-300 p-4 max-w-xs">Marque</th>
-                        <th class="border border-slate-300 p-4 max-w-xs">Site de la marque</th>
+                        <th class="border border-slate-300 p-4 max-w-xs">Categorie</th>
                         <th class="border border-slate-300 p-4 max-w-xs">Logo de la marque</th>
                         <th class="border border-slate-300 p-4 max-w-xs">Modifier</th>
                         <th class="border border-slate-300 p-4 max-w-xs">Supprimer</th>
@@ -47,7 +47,7 @@
                     @foreach ($brands as $brand)
                         <tr class="py-4">
                             <td class="border border-slate-300 p-4 truncate max-w-xs">{{ $brand->marque }}</td>
-                            <td class="border border-slate-300 p-4 truncate max-w-xs">{{ $brand->lienSiteWeb }}</td>
+                            <td class="border border-slate-300 p-4 truncate max-w-xs">{{ $brand->categorie }}</td>
                             <td class="border border-slate-300 p-4 truncate max-w-xs">{{ $brand->image }}</td>
                             <td class="border border-slate-300 max-w-xs">
                                 <button id="edit-btn" class="w-full p-4 h-full bg-blue-300" value="{{ $brand->id }}">
@@ -74,9 +74,14 @@
                         <form id="updateForm" action="{{ route('Brand.update', $brand->id) }}" method="POST" class="w-full flex flex-col justify-center align-center">
                             @method('PUT')
                             @csrf
+                            <label for="editMarque" class="m-4">Nom de la marque</label>
                             <input name="editMarque" id="editMarque" type="text" placeholder="Nom de la marque" class="m-4" required>
-                            <input name="editLienSiteWeb" id="editLienSiteWeb" type="text" placeholder="Lien du site web" class="m-4" required>
-                            <input name="editImage" id="editImage" type="text" placeholder="Logo de la marque" class="m-4" required>
+                            <label for="editLogo" class="m-4">Lien du logo</label>
+                            <input name="editLogo" id="editLogo" type="text" placeholder="Logo website" class="m-4" required>
+                            <select name="editCategorie" id="editCategorie" class="m-4" required>
+                                <option value="entreprise">Entreprise</option>
+                                <option value="particulier">Particulier</option>
+                            </select>
                             <button id="saveChanges" type="submit" class="bg-black m-4 py-2 text-white">Mettre à jour la marque</button>
                         </form>
                         <div class="w-full p-4 flex">
@@ -93,9 +98,12 @@
                         <form action="{{ route('Brand.store') }}" method="POST" class="w-full h-full flex flex-col justify-center align-center">
                             @csrf
                             <input name="marque" id="marque" type="text" placeholder="Nom de la marque" class="m-4" required>
-                            <input name="lienSiteWeb" id="lienSiteWeb" type="text" placeholder="Lien du site web" class="m-4" required>
-                            <input name="image" id="image" type="text" placeholder="Logo de la marque" class="m-4" required>
-                            <button type="submit" class="bg-black m-4 py-2 text-white">Créer une marque</button>
+                            <input type="text" name="logo" id="logo" placeholder="logo website" class="m-4" required>
+                            <select name="categorie" id="categorie" class="m-4" required>
+                                <option value="entreprise">Entreprise</option>
+                                <option value="particulier">Particulier</option>
+                            </select>
+                            <button type="submit" class="bg-black m-4 py-2 text-white">importer</button>
                         </form>
                         <div class="w-full p-4 flex">
                             <button id="closeBrandCreateModal" class="w-full bg-black py-2 text-white">Annuler</button>
@@ -129,8 +137,7 @@
 
                 // Pré-remplir les champs de la modal avec les données récupérées
                 document.getElementById('editMarque').value = marque;
-                document.getElementById('editLienSiteWeb').value = lienSiteWeb;
-                document.getElementById('editImage').value = image;
+                document.getElementById('editLogo').value = image;
 
                 // Mettre à jour l'attribut "action" du formulaire de mise à jour avec l'ID de la ligne
                 var updateForm = document.getElementById('updateForm');

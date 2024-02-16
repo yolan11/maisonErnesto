@@ -3,8 +3,12 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale1=0">
+    <title>Maison Ernesto : mobilier, luminaire, décoration - Senlis</title>
+    <meta name="description" content="L’équipe Maison Ernesto vous accompagne dans la sélection de meubles, luminaires,
+     objets de décoration… pour aménager vos intérieurs et jardins">
+    <link rel="canonical" href="https://maisonernesto.fr/">
+
     @vite('resources/css/app.css')
-    <title>Maison Ernesto</title>
 
     <link rel="icon" type="image/x-icon" href="{{ URL('images/logoSiteWeb/logo1.png') }}" sizes="32x32">
     <link rel="icon" type="image/x-icon" href="{{ URL('images/logoSiteWeb/logo1.png') }}" sizes="192x192">
@@ -23,10 +27,23 @@
     </script>
 </head>
 <body class="">
+
+<!-- Préchargeur -->
+<div id="preloader">
+    <div class="flex flex-col justify-center items-center">
+        <img src="{{ URL('images/logoSiteWeb/logo1.svg') }}" alt="Logo du site" class="h-36 w-auto justify-enter
+         items-center">
+        <svg class="mr-3 h-10 w-10 animate-spin text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+        </svg>
+    </div>
+</div>
+
 @include('layouts/Header')
 
 <div class="relative flex items-center justify-center w-full h-[100svh] sm:h-[50vh]">
-    <div class="absolute w-full h-full bg-fixed bg-cover bg-bottom blur-sm overflow-hidden" style="background-image: url('{{ URL('images/showroom/magasinMaisonErnestoDevanture.png') }}');">
+    <div class="absolute w-full h-full bg-fixed bg-cover bg-bottom blur-sm overflow-hidden" style="background-image: url('{{ URL('images/showroom/magasinMaisonErnestoDevanture.webp') }}');">
 
     </div>
     <div class="absolute w-full h-full flex justify-center items-center">
@@ -39,7 +56,7 @@
         <div class="grid grid-cols-1 lg:grid-cols-2">
             <div class="col-span-1 w-full h-[50vh] carousel1 overflow-hidden">
                 <div class="w-full h-full relative flex" id="image1">
-                    <img src="{{ URL('images/pro.jpg') }}" alt="Image 1" class="w-full h-full object-cover">
+                    <img src="{{ URL('images/Carrousel/pro.webp') }}" alt="Image 1" class="w-full h-full object-cover">
                     <h1 class="m-6 w-auto h-auto text-white text-6xl absolute top-0 left-0 z-10
                      mix-blend-difference">Ethnicraft
                     </h1>
@@ -57,7 +74,7 @@
                     </h1>
                 </div>
                 <div class="w-full h-full hidden relative flex" id="image4">
-                    <img src="{{ URL('images/Carrousel/extendo1.jpg') }}" alt="Image 4" class="w-full h-full object-cover">
+                    <img src="{{ URL('images/Carrousel/extendo1.webp') }}" alt="Image 4" class="w-full h-full object-cover">
                     <h1 class="m-6 w-auto h-auto text-white text-6xl absolute bottom-0 left-0 z-10
                      mix-blend-difference">Extendo
                     </h1>
@@ -67,7 +84,7 @@
                 <div class="w-full h-full flex justify-center items-center">
                     <div class="w-full h-full flex flex-col px-6 gap-10 flex justify-center items-start">
                         <h1 class="w-full text-[#A68069] text-3xl text-center">Entreprise</h1>
-                        <p class="w-full leading-relaxed text-center text-xl">Découvrez notre catalogue de marque adapté aux entreprises.
+                        <p class="w-full leading-relaxed text-center text-xl">Découvrez notre catalogue de marque adaptée aux entreprises.
                         </p>
                         <a href="{{ route('brandsPageCompagny') }}" class="w-full flex justify-center items-center
                           hover:text-[#A68069] group ">
@@ -83,7 +100,7 @@
             </div>
             <div class="col-span-1 w-full h-[50vh] carousel2 overflow-hidden">
                 <div class="w-full h-full group relative flex" id="image1">
-                    <img src="{{ URL('images/Carrousel/cookut1.jpg') }}" alt="Image 1" class="w-full h-full object-cover
+                    <img src="{{ URL('images/Carrousel/cookut1.webp') }}" alt="Image 1" class="w-full h-full object-cover
                     transition duration-200 group-hover:scale-105 group-hover:duration-200 group-hover:transition">
                     <h1 class="m-6 w-auto h-auto text-white text-6xl absolute top-0 left-0 z-10
                      mix-blend-difference">Cookut
@@ -155,7 +172,7 @@
                 <div class="w-full h-full flex justify-center items-center">
                     <div class="w-full h-full flex flex-col px-6 gap-10 flex justify-center items-start">
                         <h1 class="w-full text-3xl text-[#A68069] text-center">Particulier</h1>
-                        <p class="w-full leading-relaxed text-center text-xl">Découvrez notre catalogue de marque adapté aux particuliers.
+                        <p class="w-full leading-relaxed text-center text-xl">Découvrez notre catalogue de marque adaptée aux particuliers.
                         </p>
                         <a href="{{ route('brandsPageCustomer') }}" class="w-full flex justify-center items-center
                           hover:text-[#A68069] group ">
@@ -206,38 +223,44 @@
         <div class="slide-track">
             <!-- 5 first slides -->
             <div class="slide">
-                <img src="https://www.lemamobili.com/static/version1699345578/frontend/Iscanet/lema-2020/fr_FR/images/logo.svg" alt="" class="w-32">
+                <img src="{{ URL('images/marques/&tradition.svg') }}" alt="" class="w-full h-full object-contain">
             </div>
             <div class="slide">
-                <img src="https://media.ethnicraft.com/sys-master/s3_content_medias/h32/hec/8796120580126/Logo-Ethnicraft-RGB-Black.svg" alt="" class="w-32">
+                <img src="{{ URL('images/marques/gubi.svg') }}" alt="" class="w-full h-full object-contain">
             </div>
             <div class="slide">
-                <img src="https://www.fatboy.com/packs/media/Base/logo-910eda5c.svg" alt="" class="w-32">
+                <img src="{{ URL('images/marques/ethnicraft.svg') }}" alt="" class="w-full h-full object-contain">
             </div>
             <div class="slide">
-                <img src="https://www.pomax.com/themes/pomax/styles/images/Pomax_Logo_RGB_New_v3.svg" alt="" class="w-32">
+                <img src="{{ URL('images/marques/fermob.svg') }}" alt="" class="w-full h-full object-contain">
             </div>
             <div class="slide">
-                <img src="https://www.fermob.com/v-20231019080408/bundles/actifermob/tpl/img/logo2022.svg" alt="" class="w-40">
+                <img src="{{ URL('images/marques/muuto.svg') }}" alt="" class="w-full h-full object-contain">
+            </div>
+            <div class="slide">
+                <img src="{{ URL('images/marques/usm.webp') }}" alt="" class="w-full h-full object-contain">
             </div>
 
 
             <!-- 5 first slides (doubled)-->
 
             <div class="slide">
-                <img src="https://www.lemamobili.com/static/version1699345578/frontend/Iscanet/lema-2020/fr_FR/images/logo.svg" alt="" class="w-32">
+                <img src="{{ URL('images/marques/&tradition.svg') }}" alt="" class="w-full h-full object-contain">
             </div>
             <div class="slide">
-                <img src="https://media.ethnicraft.com/sys-master/s3_content_medias/h32/hec/8796120580126/Logo-Ethnicraft-RGB-Black.svg" alt="" class="w-32">
+                <img src="{{ URL('images/marques/gubi.svg') }}" alt="" class="w-full h-full object-contain">
             </div>
             <div class="slide">
-                <img src="https://www.fatboy.com/packs/media/Base/logo-910eda5c.svg" alt="" class="w-32">
+                <img src="{{ URL('images/marques/ethnicraft.svg') }}" alt="" class="w-full h-full object-contain">
             </div>
             <div class="slide">
-                <img src="https://www.pomax.com/themes/pomax/styles/images/Pomax_Logo_RGB_New_v3.svg" alt="" class="w-32">
+                <img src="{{ URL('images/marques/fermob.svg') }}" alt="" class="w-full h-full object-contain">
             </div>
             <div class="slide">
-                <img src="https://www.fermob.com/v-20231019080408/bundles/actifermob/tpl/img/logo2022.svg" alt="" class="w-40">
+                <img src="{{ URL('images/marques/muuto.svg') }}" alt="" class="w-full h-full object-contain">
+            </div>
+            <div class="slide">
+                <img src="{{ URL('images/marques/usm.webp') }}" alt="" class="w-full h-full object-contain">
             </div>
         </div>
     </div>
@@ -280,6 +303,18 @@
         // Ajoutez autant d'appels à setupCarousel que nécessaire pour vos divs carrousel supplémentaires
 
     </script>
+
+<script>
+    // Attendre que la page soit complètement chargée
+    window.addEventListener('load', function () {
+        // Cacher le préchargeur en ajoutant la classe 'hidden' après une courte période
+        setTimeout(function () {
+            document.getElementById('preloader').classList.add('hidden');
+        }, 500); // 500 millisecondes, ajustez selon vos préférences
+    });
+</script>
+
+
 
 
 </body>

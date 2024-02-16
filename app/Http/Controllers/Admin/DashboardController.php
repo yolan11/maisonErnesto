@@ -23,7 +23,17 @@ class DashboardController extends Controller
     public function showAdminBrand()
     {
         $brands = Brand::all();
+
+        if ($brands->isEmpty()) {
+            return redirect('/dashboard/brand/error');
+        }
+
         return view('Admin.AdminPage.brand', compact('brands'));
+    }
+
+    public function showAdminBrandError()
+    {
+        return view('Admin.AdminPage.no-brand-found');
     }
 
 
