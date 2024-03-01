@@ -84,14 +84,10 @@
                 </p>
                 <h1 class="text-3xl my-4">Informations que nous collectons</h1>
                 <h1 class="text-xl font-medium my-2">Données personnelles</h1>
-                <p>Lorsque vous utilisez nos services, nous pouvons collecter les types de données personnelles
-                    suivants :
-                </p>
-                <p>- Données de communication : Les informations que vous nous envoyez via des e-mails, des formulaires
-                    de contact, ou d'autres moyens de communication.
+                <p>nous ne collectons pas de données personnelles sur notre site.
                 </p>
                 <h1 class="text-xl font-medium my-2">Données non personnelles</h1>
-                <p>Nous pouvons également collecter des données non personnelles, telles que des données agrégées,
+                <p>Nous pouvons collecter des données non personnelles, telles que des données agrégées,
                     statistiques et informations démographiques.
                 </p>
                 <h1 class="text-xl font-medium my-2">Sécurité des données</h1>
@@ -135,26 +131,19 @@
                     Téléphone :  03 44 66 20 81<br>
                     E-mail : contact@maisonernesto.fr<br>
                     Numéro d'identification : 48892930800010<br>
-                    Capital social : [Montant du capital social]<br>
+                    Capital social : 60000 €<br>
                     Directeur de la publication : Emmanuel Souchon<br>
                 </p>
                 <h1 class="text-xl font-medium my-2">Hébergement du site</h1>
                 <p>
-                    Nom de l'hébergeur : BVR-CVX<br>
-                    Adresse : 40 rue Michel Bléré
-                    60260 LAMORLAYE
+                    Nom de l'hébergeur : O2switch<br>
+                    Adresse : CHE DES PARDIAUX 63000 CLERMONT-FERRAND
                 </p>
                 <h1 class="text-xl font-medium my-2">Propriété intellectuelle</h1>
                 <p>
                     Le contenu de ce site (textes, images, vidéos, etc.) est la propriété de LA MAISON ERNESTO
                     et est protégé par les lois sur la propriété intellectuelle. Toute reproduction ou utilisation
                     sans autorisation préalable est interdite.
-                </p>
-                <h1 class="text-xl font-medium my-2">Protection des données personnelles</h1>
-                <p>
-                    Conformément à la loi, LA MAISON ERNESTO s'engage à protéger les données personnelles collectées
-                    sur ce site. Pour en savoir plus sur notre politique de confidentialité, veuillez consulter notre
-                    page dédiée à la Politique de confidentialité.
                 </p>
                 <h1 class="text-xl font-medium my-2">Cookies</h1>
                 <p>
