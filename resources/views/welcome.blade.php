@@ -49,9 +49,18 @@
     <div class="absolute w-full h-full flex justify-center items-center">
         <h1 class=" uppercase text-4xl sm:text-6xl md:text-7xl 2xl:text-9xl text-white tracking-widest font-medium mix-blend-difference">Maison ernesto</h1>
     </div>
+    <div class="sm:hidden absolute bottom-6 p-2">
+        <div class="w-10 h-10 justify-center items-center">
+            <a href="" title="Bouton de défilement" id="scrollToSection2">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="w-10 h-10">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75l3 3m0 0l3-3m-3 3v-7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+            </a>
+        </div>
+    </div>
 </div>
 
-<div class="w-full h-full bg-white">
+<div id="présentation" class="w-full h-full bg-white">
     <div class="w-full h-full">
         <div class="grid grid-cols-1 lg:grid-cols-2">
             <div class="col-span-1 w-full h-[50vh] carousel1 overflow-hidden">
@@ -313,6 +322,27 @@
         }, 500); // 500 millisecondes, ajustez selon vos préférences
     });
 </script>
+
+<!--script pour faire defiler la page-->
+<script>
+    document.getElementById("scrollToSection2").addEventListener("click", function(event) {
+        event.preventDefault(); // Empêche le comportement par défaut du lien
+        const section2 = document.getElementById("présentation");
+        const offset = section2.offsetTop; // Position de la section2 par rapport au haut de la page
+        const duration = 500; // Durée de l'animation en millisecondes
+
+        // Fonction pour effectuer l'animation de défilement
+        function smoothScroll() {
+            if (window.pageYOffset < offset) {
+                window.scrollBy(0, 10);
+                setTimeout(smoothScroll, 10);
+            }
+        }
+
+        smoothScroll();
+    });
+</script>
+
 
 
 
