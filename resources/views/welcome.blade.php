@@ -215,7 +215,7 @@
                     </h1>
                 </div>
                 <div class="w-full h-full hidden relative flex" id="image4">
-                    <img src="{{ URL('images/Carrousel/ethnicraft2.jpg') }}" alt="Image 4" class="w-full h-full object-cover">
+                    <img src="{{ URL('images/Carrousel/ethnicraft2.webp') }}" alt="Image 4" class="w-full h-full object-cover">
                     <h1 class="m-6 w-auto h-auto text-white text-6xl absolute bottom-0 left-0 z-10
                      mix-blend-difference">Ethnicraft
                     </h1>
