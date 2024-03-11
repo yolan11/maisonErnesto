@@ -45,10 +45,10 @@
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:m-16" id="brandsContainer">
             @foreach ($brands as $brand)
                 <div id="brand" name="{{ $brand->marque }}" class="h-[50px] flex items-center justify-center m-4">
-                    <a href="{{ $brand->lienSiteWeb }}"
-                       class="flex justify-center align-center w-full h-full" target="_blank">
+                    <div
+                       class="flex justify-center align-center w-full h-full">
                         <img src="{{ $brand->image }}" class="object-contain" alt="Logo {{ $brand->marque }}">
-                    </a>
+                    </div>
                 </div>
             @endforeach
         </div>

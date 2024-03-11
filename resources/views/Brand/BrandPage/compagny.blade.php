@@ -58,10 +58,10 @@
             @foreach ($brands as $brand)
                 @if ($brand->categorie === 'entreprise')
                     <div id="brand" name="{{ $brand->marque }}" class="h-[50px] flex items-center justify-center m-4">
-                        <a href="{{ $brand->lienSiteWeb }}"
-                           class="flex justify-center align-center w-full h-full" target="_blank">
+                        <div
+                           class="flex justify-center align-center w-full h-full">
                             <img src="{{ $brand->image }}" class="object-contain" alt="Logo {{ $brand->marque }}">
-                        </a>
+                        </div>
                     </div>
                 @endif
             @endforeach

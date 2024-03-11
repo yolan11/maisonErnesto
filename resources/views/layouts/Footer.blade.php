@@ -57,7 +57,7 @@
                 <button id="openModal2" class="w-full text-white py-2 hover:underline whitespace-nowrap">Mentions Légales</button>
             </div>
             <div class="absolute top-0 right-0 m-4">
-                <a href="https://www.instagram.com/maisonernesto/" class="flex w-auto h-auto justify-center items-center group" target="_blank">
+                <a href="https://www.instagram.com/maisonernesto/" title="Redirection vers notre instagram" class="flex w-auto h-auto justify-center items-center group" target="_blank">
                     <img src="{{ URL('images/footer/instagram.svg') }}" alt="" class="w-10 h-auto mr-2">
                 </a>
             </div>

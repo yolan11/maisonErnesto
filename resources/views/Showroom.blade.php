@@ -84,7 +84,7 @@
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2605.952491510998!2d2.5909532768874564!3d49
         .22042807516005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e63126f05fadcf%3A0x99b16b731c0c7df5!2s
         Maison%20Ernesto!5e0!3m2!1sfr!2sfr!4v1695896727988!5m2!1sfr!2sfr" width="100%" height="100%" style="border:0;"
-                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Adresse de notre boutique">
 
         </iframe>
     </div>

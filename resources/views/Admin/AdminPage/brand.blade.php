@@ -78,6 +78,7 @@
                             <input name="editMarque" id="editMarque" type="text" placeholder="Nom de la marque" class="m-4" required>
                             <label for="editLogo" class="m-4">Lien du logo</label>
                             <input name="editLogo" id="editLogo" type="text" placeholder="Logo website" class="m-4" required>
+                            <label for="editCategorie" class="m-4">Catégorie de la marque</label>
                             <select name="editCategorie" id="editCategorie" class="m-4" required>
                                 <option value="entreprise">Entreprise</option>
                                 <option value="particulier">Particulier</option>
@@ -97,8 +98,11 @@
                     <div class=" w-full h-full flex flex-col justify-center items-center">
                         <form action="{{ route('Brand.store') }}" method="POST" class="w-full h-full flex flex-col justify-center align-center">
                             @csrf
-                            <input name="marque" id="marque" type="text" placeholder="Nom de la marque" class="m-4" required>
-                            <input type="text" name="logo" id="logo" placeholder="logo website" class="m-4" required>
+                            <label for="marque" class="m-4">Nom de la marque</label>
+                            <input name="marque" id="marque" type="text" class="m-4" required>
+                            <label for="logo" class="m-4">Lien du logo</label>
+                            <input type="text" name="logo" id="logo" class="m-4" required>
+                            <label for="categorie" class="m-4">Catégorie de la marque</label>
                             <select name="categorie" id="categorie" class="m-4" required>
                                 <option value="entreprise">Entreprise</option>
                                 <option value="particulier">Particulier</option>
