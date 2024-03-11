@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale1=0">
     <title>Maison Ernesto : mobilier, luminaire, décoration - Senlis</title>
-    <meta name="description" content="L’équipe Maison Ernesto vous accompagne dans la sélection de meubles, luminaires,
+    <meta name="description" content="Votre magasin Maison Ernesto, à Senlis, vous accompagne dans la sélection de meubles, luminaires,
      objets de décoration… pour aménager vos intérieurs et jardins">
     <link rel="canonical" href="https://maisonernesto.fr/">
 
