@@ -56,6 +56,9 @@
                     <h1 class="p-2 text-4xl">Horaires</h1>
                 </li>
                 <li class="w-full flex justify-start">
+                    <p class="p-2 text-xl">Lundi : Fermé</p>
+                </li>
+                <li class="w-full flex justify-start">
                     <p class="p-2 text-xl">Mardi : 10h00 - 13h00 / 14h30- 19h</p>
                 </li>
                 <li class="w-full flex justify-start">
@@ -75,7 +78,7 @@
                 </li>
                 <li class="flex w-full flex-col justify-center items-center">
                     <h1 id="open" class="bg-green-300 text-2xl uppercase py-2 px-4 text-center text-white rounded-xl shadow-2xl">Ouvert</h1>
-                    <h1 id="close" class="bg-red-600 text-2xl uppercase py-2 px-4 text-center text-white rounded-xl shadow-2xl">Fermé</h1>
+                    <h1 id="close" class="bg-red-600 text-2xl uppercase py-2 px-4 text-center text-white rounded-xl shadow-2xl">Ferme</h1>
                 </li>
             </ul>
         </div>
@@ -105,7 +108,7 @@
         const isLunchBreak = (currentHour >= 13 && currentHour < 14) || (currentHour === 14 && parisTime.getMinutes() < 30);
 
         // Check if the store is open based on the day of the week and time
-        if (dayOfWeek >= 1 && dayOfWeek <= 5) { // Monday to Friday
+        if (dayOfWeek >= 2 && dayOfWeek <= 5) { // Monday to Friday
             return !isLunchBreak && (currentHour >= 10 && currentHour < 13 || currentHour >= 14 && currentHour < 19);
         } else if (dayOfWeek === 6) { // Saturday
             return currentHour >= 10 && currentHour < 19;
