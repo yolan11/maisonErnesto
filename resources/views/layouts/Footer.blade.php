@@ -1,5 +1,5 @@
 <footer class="w-full h-full flex justify-center items-center">
-    <div class="w-full h-full bg-[#A68069] h-[500px] flex justify-center items-center flex-col">
+    <div class="w-full h-full bg-[#946C57] h-[500px] flex justify-center items-center flex-col">
         <div class="w-full grid grid-cols-1 h-full py-10 px-6 flex justify-center items-center gap-4">
             <div class="col-span-1 flex justify-center items-center">
                 <div class="w-full sm:w-3/5 flex-col flex gap-4">

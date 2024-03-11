@@ -92,12 +92,12 @@
             <div class="col-span-1 w-full h-[50vh] bg-white overflow-hidden">
                 <div class="w-full h-full flex justify-center items-center">
                     <div class="w-full h-full flex flex-col px-6 gap-10 flex justify-center items-start">
-                        <h1 class="w-full text-[#A68069] text-3xl text-center">Entreprise</h1>
+                        <h1 class="w-full text-[#946C57] text-3xl text-center">Entreprise</h1>
                         <p class="w-full leading-relaxed text-center text-xl">Découvrez notre catalogue de marque adaptée aux entreprises.
                         </p>
                         <a href="{{ route('brandsPageCompagny') }}" class="w-full flex justify-center items-center
                           hover:text-[#A68069] group ">
-                            <h1 class="uppercase text-center text-xl text-[#A68069] px-6 py-2 group-hover:text-[#A68069]">nos marques
+                            <h1 class="uppercase text-center text-xl text-[#946C57] px-6 py-2 group-hover:text-[#A68069]">nos marques
                             </h1>
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                                  stroke="#A68069" class="w-6 h-6 group-hover:stoke-[#A68069]">
@@ -180,12 +180,12 @@
             <div class="col-span-1 w-full h-[50vh] bg-white overflow-hidden">
                 <div class="w-full h-full flex justify-center items-center">
                     <div class="w-full h-full flex flex-col px-6 gap-10 flex justify-center items-start">
-                        <h1 class="w-full text-3xl text-[#A68069] text-center">Particulier</h1>
+                        <h1 class="w-full text-3xl text-[#946C57] text-center">Particulier</h1>
                         <p class="w-full leading-relaxed text-center text-xl">Découvrez notre catalogue de marque adaptée aux particuliers.
                         </p>
                         <a href="{{ route('brandsPageCustomer') }}" class="w-full flex justify-center items-center
                           hover:text-[#A68069] group ">
-                            <h1 class="uppercase text-center text-xl text-[#A68069] px-6 py-2 group-hover:text-[#A68069]">nos marques
+                            <h1 class="uppercase text-center text-xl text-[#946C57] px-6 py-2 group-hover:text-[#A68069]">nos marques
                             </h1>
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                                  stroke="#A68069" class="w-6 h-6 group-hover:stoke-[#A68069]">
@@ -342,11 +342,6 @@
         smoothScroll();
     });
 </script>
-
-
-
-
-
 </body>
 </html>
 
