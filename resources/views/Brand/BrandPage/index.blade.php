@@ -42,7 +42,7 @@
             </div>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:m-16" id="brandsContainer">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:m-16" id="brandsContainer">
             @foreach ($brands as $brand)
                 <div id="brand" name="{{ $brand->marque }}" class="w-auto aspect-square flex items-center justify-center m-4 p-14">
                     <div
