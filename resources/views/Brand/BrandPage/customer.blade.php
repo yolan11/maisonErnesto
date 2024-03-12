@@ -55,7 +55,7 @@
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 m-16" id="brandsContainer">
             @foreach ($brands as $brand)
                 @if ($brand->categorie === 'particulier')
-                    <div id="brand" name="{{ $brand->marque }}" class="h-[50px] flex items-center justify-center m-4">
+                    <div id="brand" name="{{ $brand->marque }}" class="w-auto aspect-square flex items-center justify-center m-4 p-14">
                         <div
                            class="flex justify-center align-center w-full h-full">
                             <img src="{{ $brand->image }}" class="object-contain" alt="Logo {{ $brand->marque }}">
