@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale1=0">
+    <meta name="viewport" content="width=device-width">
     <title>Maison Ernesto : mobilier, luminaire, décoration - Senlis</title>
     <meta name="description" content="Votre magasin Maison Ernesto, à Senlis, vous accompagne dans la sélection de meubles, luminaires,
      objets de décoration… pour aménager vos intérieurs et jardins">

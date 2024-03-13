@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale1=0">
+    <meta name="viewport" content="width=device-width">
     <title>Marques - Maison Ernesto</title>
     <meta name="description" content="A 10 minutes de l'autoroute A1, à Senlis. Venez découvrir notre showroom
      de 800 m², 80 avenue du poteau, pour y découvrir nos univers.">
