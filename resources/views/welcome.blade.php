@@ -40,6 +40,24 @@
     </div>
 </div>
 
+<div id="myModal3" class="fixed inset-0 flex items-center justify-center z-50">
+    <div class="modal-overlay absolute inset-0 bg-black opacity-50"></div>
+
+    <div class="modal-container bg-white w-11/12 sm:w-9/12 lg:w-7/12 h-auto sm:h-auto  mx-auto rounded shadow-lg z-50 overflow-y-auto">
+        <!-- Contenu de la fenêtre modale -->
+        <div class="relative modal-content text-left overflow-y-hidden overflow-x-hidden overflow-hidden">
+            <img src="{{ URL('images/promotions/fermob.webp') }}" alt="" class="object-cover">
+            <div class="absolute top-0 right-0 flex justify-center items-center">
+                <button id="closeModal3" class="modal-close p-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="w-10 h-10">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
 @include('layouts/Header')
 
 <div class="relative flex items-center justify-center w-full h-[100svh] sm:h-[50vh]">
@@ -299,7 +317,7 @@
             }
 
             // Appeler nextSlide à intervalles réguliers
-            setInterval(nextSlide, 10000);
+            setInterval(nextSlide, 5000);
         }
 
         // Utilisation avec différentes divs carrousel
@@ -340,6 +358,45 @@
         }
 
         smoothScroll();
+    });
+</script>
+
+<script name="modal3">
+    // Fonction pour définir un cookie avec une durée d'expiration
+    function setCookie(name, value, days) {
+        const date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        const expires = "expires=" + date.toUTCString();
+        document.cookie = name + "=" + value + ";" + expires + ";path=/";
+    }
+
+    // Fonction pour obtenir la valeur d'un cookie par son nom
+    function getCookie(name) {
+        const decodedCookie = decodeURIComponent(document.cookie);
+        const cookies = decodedCookie.split(';');
+        for (let i = 0; i < cookies.length; i++) {
+            let cookie = cookies[i].trim();
+            if (cookie.indexOf(name) === 0) {
+                return cookie.substring(name.length + 1);
+            }
+        }
+        return "";
+    }
+
+    // Attendre que la page soit complètement chargée
+    window.addEventListener('load', function () {
+        // Vérifier si la modale a été fermée précédemment
+        const modalClosed = getCookie('modalClosed');
+        if (modalClosed === 'true') {
+            // Si la modale a été fermée précédemment, ne pas l'afficher
+            document.getElementById('myModal3').classList.add('hidden');
+        }
+    });
+
+    // Fonction pour fermer la modale et définir un cookie
+    document.getElementById("closeModal3").addEventListener("click", function () {
+        document.getElementById('myModal3').classList.add('hidden');
+        setCookie('modalClosed', 'true', 30); // Définir le cookie pour 30 jours
     });
 </script>
 </body>
