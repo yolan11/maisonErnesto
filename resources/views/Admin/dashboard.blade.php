@@ -8,6 +8,8 @@
     <title>Dashboard - Maison Ernesto</title>
     <link rel="icon" type="image" href="{{ URL('images/logo4.png') }}">
     @vite('resources/css/app.css')
+
+
 </head>
 <body>
 

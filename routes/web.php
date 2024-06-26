@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\AdvertisementController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\BrandsController;
 use Illuminate\Support\Facades\Route;
@@ -33,14 +34,23 @@ Route::middleware('auth')->group(function () {
     Route::get('/dashboard/user', [DashboardController::class, 'showAdminUser'])->name('DashboardUser');
     Route::get('/dashboard/brand', [DashboardController::class, 'showAdminBrand'])
         ->name('DashboardBrand');
+    Route::get('/dashboard/advertisement', [DashboardController::class, 'showAdminAdvertisement'])
+        ->name('DashboardAdvertisement');
     Route::get('/dashboard/brand/error', [DashboardController::class, 'showAdminBrandError'])
         ->name('DashboardBrandError');
+    Route::get('/dashboard/ad/error', [DashboardController::class, 'showAdminAdvertisementError'])
+        ->name('DashboardAdvertisementError');
 
 
     //Brand routes
     Route::post('/brands/store', [BrandsController::class, 'store'])->name('Brand.store');
     Route::delete('/brands/destroy/{id}', [BrandsController::class, 'destroy'])->name('Brand.destroy');
     Route::put('/brands/update/{id}', [BrandsController::class, 'update'])->name('Brand.update');
+
+    //Ad routes
+    Route::post('/Advertisements/store', [AdvertisementController::class, 'store'])->name('Advertisement.store');
+    Route::delete('/Advertisement/destroy/{id}', [AdvertisementController::class, 'destroy'])->name('Advertisement.destroy');
+
 
     //User routes
     Route::delete('/user/destroy/{id}', [LoginController::class, 'destroy'])->name('User.destroy');

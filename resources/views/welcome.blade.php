@@ -40,13 +40,13 @@
     </div>
 </div>
 
-<div id="myModal3" class="fixed inset-0 flex items-center justify-center z-50">
+<div id="adModal" class="fixed inset-0 flex items-center justify-center z-50">
     <div class="modal-overlay absolute inset-0 bg-black opacity-50"></div>
 
-    <div class="modal-container bg-white w-11/12 sm:w-9/12 lg:w-7/12 h-auto sm:h-auto  mx-auto rounded shadow-lg z-50 overflow-y-auto">
+    <div class="modal-container bg-white w-auto sm:w-auto lg:w-auto h-auto sm:h-auto  mx-auto rounded shadow-lg z-50 overflow-hidden">
         <!-- Contenu de la fenêtre modale -->
-        <div class="relative modal-content text-left overflow-y-hidden overflow-x-hidden overflow-hidden">
-            <img src="{{ URL('images/promotions/fermob.webp') }}" alt="" class="object-cover">
+        <div class="relative modal-content text-left overflow-hidden">
+            <img src="{{ URL('images/promotions/soldes.png') }}" alt="" class="object-cover w-[350px] md:w-[450px]">
             <div class="absolute top-0 right-0 flex justify-center items-center">
                 <button id="closeModal3" class="modal-close p-4">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="w-10 h-10">
@@ -361,7 +361,7 @@
     });
 </script>
 
-<script name="modal3">
+<script name="adModal">
     // Fonction pour définir un cookie avec une durée d'expiration
     function setCookie(name, value, days) {
         const date = new Date();
@@ -389,16 +389,18 @@
         const modalClosed = getCookie('modalClosed');
         if (modalClosed === 'true') {
             // Si la modale a été fermée précédemment, ne pas l'afficher
-            document.getElementById('myModal3').classList.add('hidden');
+            document.getElementById('adModal').classList.add('hidden');
         }
     });
 
     // Fonction pour fermer la modale et définir un cookie
     document.getElementById("closeModal3").addEventListener("click", function () {
-        document.getElementById('myModal3').classList.add('hidden');
+        document.getElementById('adModal').classList.add('hidden');
         setCookie('modalClosed', 'true', 30); // Définir le cookie pour 30 jours
     });
 </script>
+
+
 </body>
 </html>
 
