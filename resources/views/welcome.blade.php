@@ -39,24 +39,25 @@
         </svg>
     </div>
 </div>
+@foreach ($images as $image)
+    <div id="adModal" class="fixed inset-0 flex items-center justify-center z-50">
+        <div class="modal-overlay absolute inset-0 bg-black opacity-50"></div>
 
-<div id="adModal" class="fixed inset-0 flex items-center justify-center z-50">
-    <div class="modal-overlay absolute inset-0 bg-black opacity-50"></div>
-
-    <div class="modal-container bg-white w-auto sm:w-auto lg:w-auto h-auto sm:h-auto  mx-auto rounded shadow-lg z-50 overflow-hidden">
-        <!-- Contenu de la fenêtre modale -->
-        <div class="relative modal-content text-left overflow-hidden">
-            <img src="{{ URL('images/promotions/1.png') }}" alt="" class="object-cover w-[350px] md:w-[450px]">
-            <div class="absolute top-0 right-0 flex justify-center items-center">
-                <button id="closeModal3" class="modal-close p-4">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="w-10 h-10">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
-                    </svg>
-                </button>
+        <div class="modal-container bg-white w-auto sm:w-auto lg:w-auto h-auto sm:h-auto  mx-auto rounded shadow-lg z-50 overflow-hidden">
+            <!-- Contenu de la fenêtre modale -->
+            <div class="relative modal-content text-left overflow-hidden">
+                <img src="{{ asset('storage/images/' .$image->name) }}" alt="" class="object-cover w-[350px] md:w-[450px]">
+                <div class="absolute top-0 right-0 flex justify-center items-center">
+                    <button id="closeModal3" class="modal-close p-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="w-10 h-10">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
             </div>
         </div>
     </div>
-</div>
+@endforeach
 
 @include('layouts/Header')
 

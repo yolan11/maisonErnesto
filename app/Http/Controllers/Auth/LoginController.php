@@ -77,7 +77,7 @@ class LoginController extends Controller
         Auth::logout(); // Déconnexion de l'utilisateur
         $request->session()->invalidate(); // Invalidation de la session
 
-        return redirect('/login'); // Rediriger vers la page de connexion ou une autre page de votre choix
+        return redirect('/'); // Rediriger vers la page de connexion ou une autre page de votre choix
     }
 
 

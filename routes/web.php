@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::middleware('guest')->group(function () {
-    Route::get('/', function () {return view('welcome');})->name('Home');
+    Route::get('/',  [AdvertisementController::class, 'index'])->name('Home');
     Route::get('/Brands', [BrandsController::class, 'index'])->name('Brands');
     Route::get('/brands/categorie/entreprise', [BrandsController::class, 'showBrandCompagny'])
         ->name('brandsPageCompagny');
